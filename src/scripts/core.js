@@ -50,7 +50,7 @@ export function pawnDisplayer(pos) {
         
         pos.innerHTML = xo[turn]; 
         
-        if (winCheck(row_index,col_index)) {         
+        if (winCheck(row_index,col_index, boardArray)) {         
             // setTimeout(() => {
             //     alert(`player${turn + 1} won the game!`)
             // }, 300)

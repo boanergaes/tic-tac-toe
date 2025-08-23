@@ -1,6 +1,5 @@
-import { boardArray } from "../core";
 
-export function diagonalCheck(rowstart, colstart, rowend, colend) {
+export function diagonalCheck(rowstart, colstart, rowend, colend, boardArray) {
     const input = boardArray[rowstart][colstart];
     if (input === 0) return false;
 
@@ -15,7 +14,7 @@ export function diagonalCheck(rowstart, colstart, rowend, colend) {
     return true;
 }
 
-export function verticalCheck(col) {
+export function verticalCheck(col, boardArray) {
     const input = boardArray[0][col];
     if (input  === 0) return false;
     for (let i = 1; i <= 2; i++) {
@@ -25,7 +24,7 @@ export function verticalCheck(col) {
     return true;
 }
 
-export function horizontalCheck(row) {
+export function horizontalCheck(row, boardArray) {
     const input = boardArray[row][0];
     if (input  === 0) return false;
     for (let j = 1; j <= 2; j++) {
@@ -35,29 +34,29 @@ export function horizontalCheck(row) {
     return true;
 }
 
-export function winCheck(row, col) {
-    if (diagonalCheck(0, 0, 2, 2)) {
+export function winCheck(row, col, boardArray) {
+    if (diagonalCheck(0, 0, 2, 2, boardArray)) {
         document.getElementById('s11').classList.add('winner-row');
         document.getElementById('s22').classList.add('winner-row');
         document.getElementById('s33').classList.add('winner-row');
         return true;
     }
         
-    if (diagonalCheck(0, 2, 2, 0)) {
+    if (diagonalCheck(0, 2, 2, 0, boardArray)) {
         document.getElementById('s13').classList.add('winner-row');
         document.getElementById('s22').classList.add('winner-row');
         document.getElementById('s31').classList.add('winner-row');
         return true;
     }
     
-    if (verticalCheck(col)) {
+    if (verticalCheck(col, boardArray)) {
         document.getElementById(`s1${col+1}`).classList.add('winner-row');
         document.getElementById(`s2${col+1}`).classList.add('winner-row');
         document.getElementById(`s3${col+1}`).classList.add('winner-row');
         return true;
     }
     
-    if (horizontalCheck(row)) {
+    if (horizontalCheck(row, boardArray)) {
         document.getElementById(`s${row+1}1`).classList.add('winner-row');
         document.getElementById(`s${row+1}2`).classList.add('winner-row');
         document.getElementById(`s${row+1}3`).classList.add('winner-row');
