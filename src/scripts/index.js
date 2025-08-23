@@ -1,17 +1,18 @@
-import { pawnDisplayer } from './core'
-
 import '../styles/home.css';
+import { pawnDisplayer } from './core'
+import { resetSoft } from './utils/stat-ui-updt';
 
 export const board = document.querySelector('.board');
 
 board.addEventListener('click', e => {
-    pawnDisplayer(e.target);
+    if (e.target !== document.querySelector('.winner-display') && e.target !== document.querySelector('.winner-display h1') && e.target !== board) 
+        pawnDisplayer(e.target);
 })
 
+const playAgainBtn = document.getElementById('play-again');
 
-// const board_svg = document.querySelector('.square svg');
+playAgainBtn.addEventListener('click', resetSoft)
 
-// board_svg.addEventListener('click', e => {
-//     pawnDisplayer(e.parent);
-// })
+const quitBtn = document.getElementById('quit');
 
+quitBtn.addEventListener('click', resetSoft);

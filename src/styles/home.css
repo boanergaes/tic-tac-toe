@@ -8,6 +8,7 @@
     --nums-font-family: "Share Tech Mono", monospace;
 
     --main-body-bg: hsl(0, 0%, 15%);
+    --main-body-bg-low-opacity: hsla(0, 0%, 15%, .9);
     --main-font-color: #ffd504;
     --light-bg-hover: hsl(0, 0%, 22%);
 }
@@ -176,6 +177,10 @@ section.stat {
 
 .aftermath-btn-container {
     display: none;
+
+    & button {
+        padding: .4rem;
+    }
 }
 
 /* ========== board ============ */
@@ -200,6 +205,34 @@ section.stat {
     border-radius: .6rem;
     box-shadow: 3px 3px 14px hsla(0, 0%, 0%, .4),
                 -2px -2px 14px hsla(0, 0%, 94%, .12);
+    position: relative;
+}
+
+@keyframes grow {
+    from {
+        font-size: 0;
+    }
+    to {
+        font-size: 2.4rem;
+    }
+}
+
+.winner-display {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--main-body-bg-low-opacity);
+  
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    & h1 {
+        text-align: center;
+        animation: grow 400ms ease-out 1 forwards;
+    }
 }
 
 .square {
@@ -250,7 +283,7 @@ section.stat {
     scale: 1.08;
     color: yellow;
     transition: 300ms;
-    filter: drop-shadow(0 0 8px yellow);
+    filter: drop-shadow(0 0 10px yellow);
 }
 
 @media screen and (width < 650px) {
