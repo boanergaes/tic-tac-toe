@@ -208,6 +208,27 @@ section.stat {
     position: relative;
 }
 
+.turn-display-container {
+    position: absolute;
+    left: 0;
+    top: -10%;
+    padding: .2rem 1rem;
+    border-radius: .6rem;
+    box-shadow: 3px 3px 14px hsla(0, 0%, 0%, .4),
+                -2px -2px 14px hsla(0, 0%, 94%, .12);
+    /* border: 1px solid; */
+}
+
+.turn-display {
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+}
+
+.x-display {
+    display: none;
+}
+
 @keyframes grow {
     from {
         font-size: 0;

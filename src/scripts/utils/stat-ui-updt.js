@@ -1,4 +1,21 @@
-import { arrayReset, resetMoves } from "../core";
+import { arrayReset, clearMoveTracker, resetMoves, statRemover, turnTracker } from "../core";
+
+const oDisplay = document.querySelector('.o-display');
+const xDisplay = document.querySelector('.x-display');
+
+export function turnDisplayer(turn) {
+    // turn = 0 means it's player 1's turn
+    // we display the next move not the current move
+    if (turn === 0) {
+        oDisplay.style.display = 'none';
+        xDisplay.style.display = 'flex';
+    } else {
+        oDisplay.style.display = 'flex';
+        xDisplay.style.display = 'none';
+    }
+}
+
+// turnDisplayer(turnTracker());
 
 const winnerDisplay = document.querySelector('.winner-display');
 const winMessage = document.querySelector('.winner-display h1');
@@ -29,6 +46,12 @@ export function resetSoft() {
     arrayReset();
     classRemover();
     resetMoves();
+    clearMoveTracker();
+}
+
+export function resetHard() {
+    resetSoft();
+    statRemover();
 }
 
 export function updtScore(elem) {
