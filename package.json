@@ -4,7 +4,7 @@
   "description": "This project is a web tic-tac-toe game built with Vanilla Javascript, HTML, and CSS.",
   "main": "index.js",
   "scripts": {
-    "build": "webpack",
+    "build": "webpack --mode production",
     "dev": "webpack serve"
   },
   "repository": {
