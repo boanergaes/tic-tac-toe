@@ -34,16 +34,6 @@ const xo = [
     '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x-icon lucide-x"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>'
 ]
 
-// const s11 = document.getElementById('s11');
-// const s12 = document.getElementById('s12');
-// const s13 = document.getElementById('s13');
-// const s21 = document.getElementById('s21');
-// const s22 = document.getElementById('s22');
-// const s23 = document.getElementById('s23');
-// const s31 = document.getElementById('s31');
-// const s32 = document.getElementById('s32');
-// const s33 = document.getElementById('s33');
-
 let player1_score = document.getElementById('p1-win');
 let player2_score = document.getElementById('p2-win');
 let draw = document.getElementById('draw');
