@@ -78,3 +78,4 @@ export function aftermath(winner) {
         winMessage.textContent = msg;
     }, 500);
 }
+

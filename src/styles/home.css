@@ -81,6 +81,9 @@ header h1 {
     &:hover {
         animation: gapper .3s ease-out normal forwards;
     }
+    &:not(:hover) {
+        animation: nogapper .3s ease-in-out normal forwards;
+    }
 }
 
 .header-logo {
